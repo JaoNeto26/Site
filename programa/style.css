@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+  }
+  
+  img{
+    width: 30%;
+    height: 30%; 
+  }
+  
+  h1{
+    font-family:'Preahvihear', sans-serif;
+    color: #9a4c85;
+    margin-bottom: 1rem;
+    margin-left: 5px;
+    text-shadow:
+     -1px -1px 0px #FFF, 
+     -1px 1px 0px #FFF,                    
+      1px -1px 0px #FFF,                  
+      1px 0px 0px #FFF; /* coloca borda no texto */
+  }
+  .main{
+    width: 35%;
+    margin-left:31rem;
+    margin-right: auto;
+    margin-top: 8rem; /* abaixar o texto */
+    text-align:justify;
+    font-size: 35px;
+    padding-bottom: 2rem; /*espaçamento p baixo*/
+  }
+  body{
+        height: 100vh;
+        background-image: url(../imagens/jardin2.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+  
+  }
+  .btn-link{
+    text-decoration: none;
+    border-radius: 7px; /*arredondar a fonte*/
+    width: 160px;
+    font-size: 35px; 
+    padding: 149px;  /*espaço vazio em volta*/
+    padding-top: 6px;
+    padding-bottom: 8px;
+    margin-left: 7rem;
+    margin-right: 2rem;
+    background-color: #ddbce6;  
+    color: white;
+    box-shadow: 2px 2px 2px #212121; 
+  
+  }
+  .btn-link2{
+    text-decoration: none;
+    border-radius: 7px; /*arredondar a fonte*/
+    width: 160px;
+    font-size: 35px; 
+    padding: 95px;  /*espaço vazio em volta*/
+    padding-top: 6px;
+    padding-bottom: 8px;
+    margin-left: 7rem;
+    margin-right: 2rem;
+    background-color: #d6a9df;
+    color: white;
+    box-shadow: 2px 2px 2px #212121;
+  }
+  .btn-link3{
+    text-decoration: none;
+    border-radius: 7px; /*arredondar a fonte*/
+    width: 160px;
+    font-size: 35px; 
+    padding: 6.5rem;  /*espaço vazio em volta*/
+    padding-top: 6px;
+    padding-bottom: 8px;
+    margin-left: 7rem;
+    margin-right: 2rem;
+    background-color: #8ea1d2;   
+    color: white;
+    box-shadow: 2px 2px 2px #212121;
+  
+  }
+  
+  
+  .logo{
+    margin-right: 1%;
+    margin-left:78rem;
+    width: 7%;
+    height: 7%;
+    
+  }
+  .botao1{
+    background-color: white;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    margin-right: 2px;
+    font-size: 13px;
+    font-weight: bold;
+    border: 2px solid #d6a9df;
+    color: #000;cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .menu{
+    position: absolute;
+    bottom: 32rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding-bottom: 2rem;
+  }
+  h1:hover {
+      color: #678ad0;  
+  }
+  
+  .btn-link:hover {
+    background-color: #81608a; 
+  }
+  .btn-link2:hover {
+    background-color: #81608a; 
+  }
+  .btn-link3:hover {
+    background-color: #81608a; 
+  }
+  .btn-link4:hover{
+    background-color: #81608a; 
+  }
+  .botao1:hover{
+    background-color:#d6a9df;       
+      color: #ffffff;
+  }
+
+  
+  
+ 

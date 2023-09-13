@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="../imagens/3052313_abc_letter_letters_lowercase_icon (1).png" type="image/x-icon"> 
+    <script src="../programa/conquista.js"></script>
+    <!--icone topo-->
+    <title>Jogo da Letra Inicial</title>
+</head>
+  
+    
+<body>
+    <div class="game-container">
+        <img id="game-image" src="" alt="Imagem">
+        <label for="guess">Com qual letra a imagem começa?</label>
+        <input type="text" id="guess" placeholder="Digite a letra">
+        <button class="botao1" id="check-button">Verificar</button>
+        <p id="result"></p>
+    </div>
+
+    <div id="meuModal" class="modal">
+        <div class="modal-content">
+            <p>Parabéns, você completou a fase! deseja Jogar Novamente?</p>
+            <div class="modal-buttons">
+                <button class="botao1" id="fecharModal" >reiniciar</button>
+                <button class="botao1" id="Voltar">Voltar</button>
+            </div>
+        </div>
+    </div>
+    <a class="back-link" href="Pagina_Fases.html" onclick="goBack()">
+        <i class="fas fa-arrow-left">Voltar</i> 
+      </a>>
+<script>
+      const checkButton = document.getElementById('check-button');
+      const resultParagraph = document.getElementById('result');
+      const guessInput = document.getElementById('guess');
+      const gameImage = document.getElementById('game-image');
+      const voltar = document.getElementById('Voltar');
+const copia = [
+            ["../imagens/gato.png","G"],
+            ["../imagens/fase4/boneca.jpg","B"],
+            ["../imagens/fase4/fd.jpg","F"],
+            ["../imagens/fase4/b.jpg", "B"],
+            ["../imagens/fase4/n.png","N"],
+            ["../imagens/fase4/s.png","S"]
+            ];
+      var imagens = [
+  ["../imagens/gato.png","G"],
+  ["../imagens/fase4/boneca.jpg","B"],
+  ["../imagens/fase4/fd.jpg","F"],
+  ["../imagens/fase4/b.jpg", "B"],
+  ["../imagens/fase4/n.png","N"],
+  ["../imagens/fase4/s.png","S"]
+
+];
+
+var test = Math.floor(Math.random() * imagens.length);
+gameImage.src = imagens[test][0];
+var currentLetter = imagens[test][1];
+var abrirModalBtn = document.getElementById("abrirModal");
+var fecharModalBtn = document.getElementById("fecharModal");
+var meuModal = document.getElementById("meuModal");
+
+  
+      checkButton.addEventListener('click', () => {
+          const userGuess = guessInput.value.toUpperCase();
+          if (userGuess === currentLetter) {
+              resultParagraph.textContent = 'Parabéns! Você acertou!';
+              resultParagraph.style.color = 'green';
+              setTimeout(function(){
+                resultParagraph.textContent = null;
+                guessInput.value = null;
+                imagens.splice(test, 1);
+                test = Math.floor(Math.random() * imagens.length);
+                gameImage.src = imagens[test][0];
+                currentLetter = imagens[test][1];
+              },2000);
+              setTimeout(function() {
+                if (imagens.length === 0){
+                    completarCondicaoFs4();
+                meuModal.style.display = "flex";
+                fecharModalBtn.addEventListener("click", function () {
+                    meuModal.style.display = "none";
+                    imagens = copia;
+                    test = Math.floor(Math.random() * imagens.length);
+                    gameImage.src = imagens[test][0];
+                    currentLetter = imagens[test][1];
+                });
+                Voltar.addEventListener("click", function(){
+                    window.location.href = "Pagina_Fases.html";
+                });
+                }
+              }, 2000);
+          } else {
+              resultParagraph.textContent = 'Oops, tente novamente!';
+              resultParagraph.style.color = 'red';
+          }
+          
+        });
+
+    </script>
+</body>
+  <style>
+    .back-link {
+  padding: 8px 20px;
+  background-color:#494770;
+  color: #ffff; 
+  text-decoration: none;
+  border-radius: 5px;
+  }
+  .back-link:hover{
+  background-color: white;
+  color:#494770;
+  }
+  a{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+  }
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:url(../imagens/fundo3.png);
+}
+
+.game-container {
+    text-align: center;
+    background-color: white;
+    padding:20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    max-width: 30%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-top: 5px;
+    border-radius: 5px;
+    margin-right: 2px;
+    font-size: 13px;
+    font-weight: bold;
+    border: 2px solid #d6a9df; 
+    color: #000;cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+button:hover{
+    background-color:#d6a9df;       
+      color: #ffffff;
+}
+
+
+p#result {
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* Estilos para o modal */
+.modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .modal-buttons {
+            margin-top: 10px;
+        }
+  </style>
+</html>
+

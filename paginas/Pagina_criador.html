@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre nós</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="programa/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="programa/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="../imagens/3052313_abc_letter_letters_lowercase_icon (1).png"> <!--icone topo-->
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url(../imagens/fundo3.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        position: relative;
+        min-height: 92vh;
+      }
+      .container {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding-top: 50px;
+        padding-left: 20px;
+        padding-bottom: 50px;
+        background-color: white;  
+        border-radius: 10px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        margin-top: 4rem;
+      }
+      .person {
+          display: flex;
+          margin-bottom: 20px;
+      }
+      .person-image {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-right: 20px;
+      }
+      .person-details {
+          flex: 1;
+      }
+      .person-name {
+          font-family: 'Roboto Mono', monospace;
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 5px;
+      }
+      .person-description {
+          font-size: 14px;
+          line-height: 1.5;
+      }
+      h1{
+        text-align: center;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1;
+      }
+      .back-link {
+      display: inline-block;
+      padding: 4px 10px;
+      background-color:#494770;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+      
+      }
+      .back-link:hover{
+      background-color: white;
+      color:#494770;
+      }
+      .botao{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    </style>  
+</head>
+<body>
+    <div class="container">
+      <h1>Sobre nós</h1>
+        <div class="person">
+            <img class="person-image" src="../imagens/Amabilia.jpg" alt="Pessoa 1">
+            <div class="person-details">
+                <div class="person-name">Amabilia</div>
+                <div class="person-description"> Olá, me chamo Amabilia Cristine, estudo na escola Maurício Fernandes e estou no 9 ano "A"
+                  . Gosto muito de ler, escutar música, Mortal Kombat e de filmes de terror. A única coisa que eu faço na minha 
+                  vida é estudar que nem louca. Já ganhei competições de escrita três vezes seguidas, minha matéria favorita
+                   é português, passei quatro fases da ONHB no nono ano, fiz um ano de teatro e espero que futuramente, 
+                   eu possa aprender libras e tocar teclado.></div>
+            </div>
+        </div>
+        <div class="person">
+            <img class="person-image" src="../imagens/caio.jpg" alt="Pessoa 2">
+            <div class="person-details">
+                <div class="person-name">Caio Victor</div>
+                <div class="person-description">Olá, me chamo Caio Victor sou um estudante do 9° ano A da escola Maurício Fernandes. Eu gosto muito de estudar, ainda mais matemática,
+                   que é minha matéria favorita. Estudando bastante, eu fui medalhista da Obmep (Olimpíada Brasileira de Matemática 
+                   das Escolas Públicas). Uma outra conquista que eu tenho bastante orgulho, foi em 2022, 
+                   quando um projeto desenvolvido por mim e meus colegas da feira de ciências, chamado "LUTA POR ACESSIBILIDADE" 
+                   foi premiado com a credencial para a MOSTRATEC.</div>
+            </div>
+        </div>
+        <div class="person">
+            <img class="person-image" src="../imagens/Sabrina.jpg" alt="Pessoa 3">
+            <div class="person-details">
+                <div class="person-name">Sabrina</div>
+                <div class="person-description">Olá, me chamo Sabrina sou uma aluna do Maurício Fernandes, eu toco teclado, gosto de ler,
+                   de artes, literatura e escrevo poemas. Passei também na feira de ciências no sexto ano com o projeto "jogo
+                    de matemática" que buscava tornar tal assunto em matemática, mais fácil, e junto com minha amiga Amabilia
+                     e Giseli, passei quatro fases da ONHB no nono ano.</div>
+            </div>
+        </div>
+    </div>
+    <div class="botao">
+    <a class="back-link" href="../pagina_inicial.html" onclick="goBack()">
+      <i class="fas fa-arrow-left">Voltar</i> 
+     </a>
+    </div>
+</body>
+</html>
+

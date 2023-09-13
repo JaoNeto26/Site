@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Conquistas</title>
+  <link href="programa/style.css" rel="stylesheet" type="text/css"/>
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+  <link rel="shortcut icon" href="../imagens/3052313_abc_letter_letters_lowercase_icon (1).png" type="image/x-icon"> <!--icone topo-->
+  <script src="../programa/conquista.js"></script>
+</head>
+<script>
+  
+// Verificar se a condição foi completada
+document.addEventListener("DOMContentLoaded", function() {
+    const condicaoCompletafs1 = localStorage.getItem("Fase1Completa");
+    const condicaoCompletafs2 = localStorage.getItem("Fase2Completa");
+    const condicaoCompletafs3 = localStorage.getItem("Fase3Completa");
+    const condicaoCompletafs4 = localStorage.getItem("Fase4Completa");
+    const fase1 = document.getElementById("fase1");
+    const fase2 = document.getElementById("fase2");
+    const fase3 = document.getElementById("fase3");
+    const fase4 = document.getElementById("fase4");
+  
+    if (condicaoCompletafs1 === "true") {
+        // Exibir a conquista
+        
+        fase1.style.opacity = 1;
+        
+    }
+    if (condicaoCompletafs2 === "true") { 
+        // Exibir a conquista
+        fase2.style.opacity = 1;
+    }
+    if (condicaoCompletafs3 === "true") {
+        // Exibir a conquista
+        fase3.style.opacity = 1;
+    }
+    if (condicaoCompletafs4 === "true") {
+        // Exibir a conquista
+        fase4.style.opacity = 1;
+    }
+});
+
+</script>
+<body> 
+
+  <h1>CONQUISTAS</h1>
+  <div class="botao">
+  <a class="back-link" href="../pagina_inicial.html" onclick="goBack()">
+    <i class="fas fa-arrow-left">Voltar</i></a>
+  </div>
+  <div class="conquista" id="conquistas">
+    <div class="container1" id="fase1">
+      
+      <img src="../imagens/medalhas/medalha de bronze.png">
+      <p>Parabéns, você completou a fase 1!</p>
+    </div>  
+    <div class="container2" id="fase2">
+      <img src="../imagens/medalhas/medalha de bronze.png">
+      <p>Parabéns, você completou a fase 2!</p>
+    </div>
+    <div class="container3" id="fase3">
+      <img class="img3" src="../imagens/medalhas/medalha de prata.png">
+      <p>Parabéns, você completou a fase 3!</p>
+    </div>
+    <div class="container4" id="fase4">
+      <img class="img2" src="../imagens/medalhas/medalha de ouro.png">
+      <p>Parabéns, você completou a fase 4!</p>
+    </div>
+  </div>
+</body>
+<style>
+  p{
+    font-size: 23px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 2rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  h1{
+    font-family:'Preahvihear', sans-serif;
+    color: #9a4c85;
+    margin-bottom: 1rem;
+    margin-left: 5px;
+    text-align: center;
+  
+    text-shadow:
+     -1px -1px 0px #FFF, 
+     -1px 1px 0px #FFF,                    
+      1px -1px 0px #FFF,                  
+      1px 0px 0px #FFF; /* coloca borda no texto */
+  }
+  .container1{
+    align-items: baseline;
+    text-align: center;
+    max-width: 300px;
+    padding-right: 3rem;
+    display: inline-block;
+    font-size: 10px;
+    margin-top: 6rem;
+  }
+  .container2{
+    text-align: center;
+    max-width: 300px;
+    display: inline-block;
+    margin-top: 6rem;
+    font-size: 10px;
+  }
+  .container3{
+    text-align: center;
+    max-width: 300px;
+    margin-bottom:2rem ;
+    display: inline-block;
+    margin-top: 6rem;
+    font-size: 10px;
+  }
+  .container4{
+    text-align: center;
+    max-width: 300px;
+    margin-bottom:2rem;
+    display: inline-block;
+    margin-top: 6rem;
+    font-size: 10px;
+  }
+  img{
+    width: 80%;
+    height: 80%;
+  }
+  .img2{
+    width: 68%;
+    height: 68%;
+  }
+  .img3{
+    width: 78%;
+    height: 78%;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background: url('../imagens/fundo3.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 90vh;
+    
+}
+#fase1{
+  opacity: 0.2; /* Aplicar opacidade reduzida para parecer desabilitada */
+  pointer-events: none;
+}
+#fase2{
+  opacity: 0.2; /* Aplicar opacidade reduzida para parecer desabilitada */
+  pointer-events: none;
+}
+#fase3{
+  opacity: 0.2; /* Aplicar opacidade reduzida para parecer desabilitada */
+  pointer-events: none;
+}
+#fase4{
+  opacity: 0.2; /* Aplicar opacidade reduzida para parecer desabilitada */
+  pointer-events: none;
+}
+.back-link {
+  padding: 8px 20px;
+  background-color:#494770;
+  color: #ffff; 
+  text-decoration: none;
+  border-radius: 5px;
+  }
+  .back-link:hover{
+  background-color: white;
+  color:#494770;
+  }
+  .botao{
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0;
+  } 
+  h1:hover {
+      color: #678ad0;  
+  }
+</style>
+</html>

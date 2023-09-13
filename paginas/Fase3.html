@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Jogo de Adivinhação</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="../programa/conquista.js"></script>
+  <link rel="shortcut icon" href="../imagens/3052313_abc_letter_letters_lowercase_icon (1).png" type="image/x-icon"> <!--icone topo-->
+</head>
+<body>
+  <div class="container">
+    <br>
+    <br>
+    <h1>Isto é ?</h1>
+    <div class="paniel">
+      <img src="" id="imagen" alt="Imagem de uma pessoa">
+        <div class="opcoes">
+    
+
+    <button id="btn1" class="bnt1" onclick="verificar(this)"></button>
+    <button id="btn2" class="bnt2" onclick="verificar(this)"></button>
+    <button id="btn3" class="bnt3" onclick="verificar(this)"></button>
+    <button id="btn4" class="bnt4" onclick="verificar(this)"></button>
+    
+  </div>
+  <p id="mensagem"></p>
+  </div>
+</div>
+<div id="meuModal" class="modal">
+  <div class="modal-content">
+      <p>Parabéns, você completou a fase! deseja Jogar Novamente?</p>
+      <div class="modal-buttons">
+          <button class="botao1" id="fecharModal" >reiniciar</button>
+          <button class="botao1" id="proxima">Fase 4</button>
+      </div>
+  </div>
+</div>
+  <a class="back-link" href="Pagina_Fases.html" onclick="goBack()">
+      <i class="fas fa-arrow-left">Voltar</i> 
+    </a>>
+
+  <script src="script.js"></script>
+</body>
+  <style>
+    .botao1{
+      background-color: white;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      margin-right: 2px;
+      font-size: 13px;
+      font-weight: bold;
+      border: 2px solid #d6a9df;
+      color: #000;cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .bnt1{
+      background-color: white;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      margin-right: 2px;
+      font-size: 15px;
+      font-weight: bold;
+      border: 2px solid #d6a9df;
+      color: #000;cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .bnt2{
+      background-color: white;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      margin-right: 2px;
+      font-size: 15px;
+      font-weight: bold;
+      border: 2px solid #d6a9df;
+      color: #000;cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .bnt3{
+      background-color: white;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      margin-right: 2px;
+      font-size: 15px;
+      font-weight: bold;
+      border: 2px solid #d6a9df;
+      color: #000;cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .bnt4{
+      background-color: white;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      margin-right: 2px;
+      font-size: 15px;
+      font-weight: bold;
+      border: 2px solid #d6a9df;
+      color: #000;cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+  
+    .paniel{
+    text-align: center;
+    border-radius: 5px;
+    box-shadow:rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    margin-top: 2rem;
+
+  }
+  .container{
+    max-width: 550px;
+    margin: 2rem auto;
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-bottom: 40px;
+    background-color: white;  
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top:1rem;
+    
+  }
+  .back-link {
+  padding: 8px 20px;
+  background-color:#494770;
+  color: #ffff; 
+  text-decoration: none;
+  border-radius: 5px;
+  }
+  .back-link:hover{
+  background-color: white;
+  color:#494770;
+  }
+  a{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+  }   
+body {
+  margin-top: 10rem;
+  font-family: Arial, sans-serif; 
+  background: url(../imagens/fundo3.png);
+    }
+
+h1 {
+  margin-top:-2rem;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  max-width: 150px;
+  margin: 2'0'px auto;
+  
+}
+
+.opcoes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 5px;
+  color:#494770;
+
+}
+
+.opcao{
+  margin-top: 1rem;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: white;
+  border: 1px solid #999;
+  border-radius: 5px;
+
+}
+
+.opcao:hover{
+  background-color: #d6a9df;
+  color: white;
+}
+#mensagem {
+  margin-top: 20px;
+  font-weight: bold;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+.modal-buttons {
+    margin-top: 10px;
+}
+.bnt1:hover {
+        background-color:#d6a9df;       
+        color: #ffffff;
+    }
+.bnt2:hover {
+    background-color:#d6a9df;       
+    color: #ffffff;
+}
+.bnt3:hover {
+    background-color:#d6a9df;       
+    color: #ffffff;
+}
+.bnt4:hover {
+    background-color:#d6a9df;       
+    color: #ffffff;
+}
+.botao1:hover{
+  background-color:#d6a9df;       
+    color: #ffffff;
+}
+  </style>
+  <script>
+    const proxima = document.getElementById('proxima');
+    var abrirModalBtn = document.getElementById("abrirModal");
+    var fecharModalBtn = document.getElementById("fecharModal");
+    var meuModal = document.getElementById("meuModal");
+    const imagen = document.getElementById('imagen');
+    const resultado = document.getElementById('mensagem');
+    const btn1 = document.getElementById('btn1');
+    const btn2 = document.getElementById('btn2');
+    const btn3 = document.getElementById('btn3');
+    const btn4 = document.getElementById('btn4');
+    var palavra_correta = null;
+    const copia =  [
+      ["../imagens/fase3/arvore.png","janela","braço","arvore","casa","arvore"],
+      ["../imagens/fase3/bola.jpg","caderno","boneca","bola","livro","bola"],
+      ["../imagens/fase3/carro.png","computador","carro","lápis","tesoura","carro"],
+      ["../imagens/fase3/casa.png","casa","pessoa","árvore","flor","casa"],
+      ["../imagens/fase3/m.jpg","telhado","caneta","planta","mochila","mochila"]
+    ];
+  var imagens = [
+      ["../imagens/fase3/arvore.png","janela","braço","arvore","casa","arvore"],
+      ["../imagens/fase3/bola.jpg","caderno","boneca","bola","livro","bola"],
+      ["../imagens/fase3/carro.png","computador","carro","lápis","tesoura","carro"],
+      ["../imagens/fase3/casa.png","casa","pessoa","árvore","flor","casa"],
+      ["../imagens/fase3/m.jpg","telhado","caneta","planta","mochila","mochila"]
+    ];
+    var test = Math.floor(Math.random() * imagens.length);
+    imagen.src = imagens[test][0];
+    function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+function NumeroAleatorioSemRepeticao(min, max) {
+    const numeros = Array.from({ length: max - min + 1 }, (_, index) => index + min);
+    shuffleArray(numeros);
+    
+    return function() {
+        if (numeros.length === 0) {
+            return null; // Todos os números foram usados
+        }
+        return numeros.pop();
+    };
+}
+
+function sorteio(){
+var obterNumeroAleatorio = NumeroAleatorioSemRepeticao(1, 4);
+btn1.textContent = imagens[test][obterNumeroAleatorio()];
+btn2.textContent = imagens[test][obterNumeroAleatorio()];
+btn3.textContent = imagens[test][obterNumeroAleatorio()];
+btn4.textContent = imagens[test][obterNumeroAleatorio()];
+palavra_correta = imagens[test][5];
+}
+sorteio();
+function verificar(botão){
+  var palavra = botão.textContent;
+  if (palavra === palavra_correta){
+    botão.style.backgroundColor = "green";
+    resultado.textContent = "Resposta Correta";
+    resultado.style.color = "green";
+    setTimeout(function(){
+    botão.style.backgroundColor = null;
+    resultado.textContent = null;
+    imagens.splice(test, 1);
+    test = Math.floor(Math.random() * imagens.length);
+    imagen.src = imagens[test][0];
+    sorteio();
+    },2000);
+    
+    setTimeout(function() {
+                if (imagens.length === 0){
+                  completarCondicaoFs3();
+                meuModal.style.display = "flex";
+                fecharModalBtn.addEventListener("click", function () {
+                    meuModal.style.display = "none";
+                    imagens = copia;
+                    test = Math.floor(Math.random() * imagens.length);
+                    imagen.src = imagens[test][0];  
+                    sorteio();
+                    
+                });
+                proxima.addEventListener("click", function(){
+                    window.location.href = "fase4.html";
+                });
+                }
+              }, 2000);
+  }else{
+    resultado.textContent = "Resposta errada";
+    resultado.style.color = "red";
+  }
+
+}
+
+  </script>
+</html>

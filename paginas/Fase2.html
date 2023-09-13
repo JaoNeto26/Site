@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="../programa/conquista.js"></script>
+    <title>Vogais</title>
+    <link rel="shortcut icon" href="../imagens/3052313_abc_letter_letters_lowercase_icon (1).png" type="image/x-icon"> <!--icone topo-->
+</head>
+<body>
+    <div class="game-container">
+        <h1>Selecione apenas vogais</h1>
+        <div class="letter-container">
+            <p class="letter">A</p>
+            <p class="letter">B</p>
+            <p class="letter">O</p>
+            <p class="letter">D</p>
+            <p class="letter">E</p>
+            <p class="letter">F</p>
+            <p class="letter">G</p>
+            <p class="letter">I</p>
+            <p class="letter">J</p>
+            <p class="letter">Z</p>
+            <p class="letter">U</p>
+
+            <!-- Adicione as outras letras aqui -->
+        </div>
+        <p class="result-message"></p>
+    </div>
+    <div id="meuModal" class="modal">
+      <div class="modal-content">
+          <p>Parabéns, você completou a fase! deseja Jogar Novamente? ou ir para a próxima fase ?</p>
+          <div class="modal-buttons">
+              <button id="fecharModal" class="botao1">reiniciar</button>
+              <button id="proxima" class="botao1">Fase 3</button>
+          </div>
+      </div>
+  </div>
+  <div class="voltar">
+  <a class="back-link" href="Pagina_Fases.html" onclick="goBack()">
+      <i class="fas fa-arrow-left">Voltar</i></a> 
+  </div>
+    <script>
+        const letters = document.querySelectorAll(".letter");
+        const resultMessage = document.querySelector(".result-message");
+        const fecharModal = document.getElementById('fecharModal');
+        const proxima = document.getElementById('proxima');
+        const meuModal = document.getElementById("meuModal");
+        let certo = 0;
+        letters.forEach(letter => {
+        letter.addEventListener("click", () => {
+        const clickedLetter = letter.textContent.toLowerCase();
+        if (isVowel(clickedLetter)) {
+            resultMessage.textContent = "Parabéns, é uma vogal!";
+            letter.style.backgroundColor = "green";
+            setTimeout (function (){
+              letter.style.backgroundColor = null;
+            },2000);
+            certo++;
+            if (certo === 5){
+              completarCondicaoFs2();
+              certo = 0;
+              resultMessage.textContent = "";
+              meuModal.style.display = "flex";
+              fecharModal.addEventListener("click", function () {
+              meuModal.style.display = "none";
+              
+              
+                  });
+            proxima.addEventListener("click", function(){
+                    window.location.href = "fase3.html";
+                });
+            }
+        } else {
+            resultMessage.textContent = "Esta letra não é uma vogal Tente novamente.";
+        }
+        });
+        });
+
+function isVowel(letter) {
+    const vowels = ["a", "e", "i", "o", "u"];
+    return vowels.includes(letter);
+}
+</script>
+</body>
+
+    <style>
+
+     .botao1:hover{
+    background-color:#d6a9df;       
+      color: #ffffff;
+  }
+      .botao1{
+      background-color: white;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      margin-right: 2px;
+      font-size: 13px;
+      font-weight: bold;
+      border: 2px solid #d6a9df;
+      color: #000;cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+      /* Estilos para o modal */
+.modal {
+   
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+.modal-buttons { 
+    margin-top: 10px;
+}
+      body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: url(../imagens/fundo3.png);
+    }
+    
+    .back-link {
+      padding: 8px 20px;
+      background-color:#494770;
+      color: #fff; 
+      text-decoration: none;
+      border-radius: 5px;
+      }
+      .back-link:hover{
+      background-color: white;
+      color:#494770;
+      }
+      .voltar{
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+      }
+    .game-container {
+      text-align: center;
+      background-color: #ffffff;
+      padding: 70px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1{
+      margin-top: -2rem;
+    
+    }
+    .letter-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .letter {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 5px;
+        padding: 10px;
+        border: 2px solid #d6a9df;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .letter:hover {
+        background-color:#d6a9df;       
+        color: #ffffff;
+    }
+    
+    </style>
+
+</html>                

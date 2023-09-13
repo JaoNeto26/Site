@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!--icone pause e play-->
+  <link rel="shortcut icon" href="imagens/3052313_abc_letter_letters_lowercase_icon (1).png" type="image/x-icon"> <!--icone topo-->
+    <script>
+
+      function playAudio() {
+        let x = document.getElementById('myAudio');
+        x.play();
+      }
+      function pauseAudio() {
+        let x = document.getElementById("myAudio");
+        x.pause();
+      }
+    </script>
+
+    <style>
+    h1{
+      text-align: center;
+      font-family:'Preahvihear', sans-serif;
+      color: #9a4c85;
+      margin-bottom: 1rem;
+      margin-left: 5px;
+      text-shadow:
+      -1px -1px 0px #FFF, 
+      -1px 1px 0px #FFF,                    
+        1px -1px 0px #FFF,                  
+        1px 0px 0px #FFF; /* coloca borda no texto */
+    }
+     body{
+        height: 100vh;
+        background: url(imagens/jardin2.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+     }
+     
+     .logo{
+        width: 10%;
+        height: 10%;
+        position: absolute;
+        top: 0;
+        right: 0;
+     }
+    
+  .btn-link{
+    text-decoration: none;
+    border-radius: 7px; /*arredondar a fonte*/
+    width: 160px;
+    font-size: 35px; 
+    padding: 149px;  /*espaço vazio em volta*/
+    padding-top: 6px;
+    padding-bottom: 8px;
+    background-color: #ddbce6;  
+    color: white;
+    box-shadow: 2px 2px 2px #212121; 
+  
+  }
+  .btn-link2{
+    text-decoration: none;
+    border-radius: 7px; /*arredondar a fonte*/
+    width: 160px;
+    font-size: 35px; 
+    padding: 95px;  /*espaço vazio em volta*/
+    padding-top: 6px;
+    padding-bottom: 8px;
+    background-color: #d6a9df;
+    color: white;
+    box-shadow: 2px 2px 2px #212121;
+  }
+  .btn-link3{
+    text-decoration: none;
+    border-radius: 7px; /*arredondar a fonte*/
+    width: 160px;
+    font-size: 35px; 
+    padding: 6.5rem;  /*espaço vazio em volta*/
+    padding-top: 6px;
+    padding-bottom: 8px;
+    background-color: #8ea1d2;   
+    color: white;
+    box-shadow: 2px 2px 2px #212121;
+  
+  }
+  .butona1{
+        background-color: rgb(224, 188, 220);
+        padding-left:4px;
+        padding-right: 4px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        border-radius: 5.5px;
+        
+        top: 35em;
+        right: 63.5em;
+        
+      }
+      .butona2{
+        background-color: rgb(224, 188, 220);
+        padding-left:4px;
+        padding-right: 4px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        border-radius: 5.5px;
+        cursor: pointer;
+        
+        top: 35em;
+        right: 61em;
+      }
+      .audio{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    </style>
+</head>
+<body>
+    <div class="header">
+      <img src="imagens/logorox.png" class="logo">
+      <div class="main">
+        <h1>SAMAIO ALFABETIZAÇÃO</h1>
+      </div>
+      <div class="menu">
+        <a class="btn-link" href="paginas/Pagina_Fases.html">JOGAR</a>
+        <br>
+        <br>
+        <a class="btn-link2" href="paginas/Pagina_Comquista.html">CONQUISTAS</a>
+        <br>
+        <br>
+        <a class="btn-link3" href="paginas/Pagina_criador.html">CRIADORES</a>
+        <br>
+      </div>
+    </div>
+    <div class="audio">
+      <audio id="myAudio"> <!--audio-->
+        <source src="imagens/msc/msc.mp3" type="audio/mpeg">
+      </audio> <br>
+  
+      <button class="butona1" onclick="playAudio()"><i class="fas fa-volume-up"></i> </button>
+      <button  class="butona2" onclick="pauseAudio()"><i class="fas fa-volume-mute"></i> </button> <!--botoes de som-->
+      </div>
+    
+  </body>
+  
+</html>
